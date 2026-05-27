@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Raksina Klungarvuth — Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--white:#faf9f7;--black:#1a1a18;--sage:#8fa687;--sage-light:#c8d4c4;--sage-pale:#eef2ec;--muted:#8a8a84;--border:#e2deda;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.7;overflow-x:hidden;}
+*,a,button{cursor:none;}
+#cursor{position:fixed;width:10px;height:10px;background:var(--sage);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;mix-blend-mode:multiply;}
+#cursor.big{width:48px;height:48px;background:var(--sage-light);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:rgba(250,249,247,0.88);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s;}
+nav.scrolled{border-color:var(--border);}
+.nav-logo{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--black);text-decoration:none;}
+.nav-logo span{color:var(--sage);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--black);}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:var(--sage);display:inline-block;animation:breathe 3s ease-in-out infinite;}
+@keyframes breathe{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:90px;}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:60px 48px 72px;border-right:1px solid var(--border);position:relative;overflow:hidden;}
+.hero-year{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:auto;padding-top:20px;}
+.hero-outline{font-family:var(--serif);font-size:clamp(56px,8vw,108px);font-weight:300;line-height:.95;color:transparent;-webkit-text-stroke:1px var(--border);user-select:none;margin-bottom:-8px;}
+.hero-solid{font-family:var(--serif);font-size:clamp(56px,8vw,108px);font-weight:400;line-height:.95;color:var(--black);margin-bottom:4px;}
+.hero-outline2{font-family:var(--serif);font-size:clamp(56px,8vw,108px);font-weight:300;line-height:.95;color:transparent;-webkit-text-stroke:1px var(--sage-light);user-select:none;}
+.hero-right{display:flex;flex-direction:column;justify-content:flex-end;padding:60px 48px 72px;}
+.hero-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:32px;display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:20px;}
+.hero-tag::before{content:'';width:28px;height:1px;background:var(--sage);}
+.hero-name{font-family:var(--serif);font-size:38px;font-weight:300;line-height:1.15;margin-bottom:24px;}
+.hero-name em{font-style:italic;color:var(--sage);}
+.hero-desc{font-size:14px;line-height:1.8;color:var(--muted);max-width:340px;margin-bottom:48px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:14px 28px;background:var(--black);color:var(--white);border:1px solid var(--black);text-decoration:none;transition:background .25s,color .25s;display:inline-block;}
+.btn-primary:hover{background:var(--sage);border-color:var(--sage);}
+.btn-ghost{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:14px 28px;background:transparent;color:var(--muted);border:1px solid var(--border);text-decoration:none;transition:border-color .25s,color .25s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--sage);color:var(--sage);}
+.hero-scroll{position:absolute;bottom:32px;left:48px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;}
+.hero-scroll::after{content:'';width:1px;height:32px;background:var(--border);}
+
+section{padding:100px 48px;}
+.section-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.section-intro{font-size:14px;color:var(--muted);line-height:1.8;max-width:480px;margin-bottom:48px;}
+
+/* NOTICE */
+.notice-banner{background:#fffdf7;border:1px solid #e8e0c8;border-left:3px solid var(--sage);padding:36px 48px;}
+.notice-inner{max-width:680px;}
+.notice-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.notice-label::before{content:'';width:16px;height:1px;background:var(--sage);}
+.notice-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--black);margin-bottom:14px;}
+.notice-body{font-size:13px;color:var(--muted);line-height:1.9;}
+.notice-body p{margin-bottom:10px;}
+.notice-body p:last-child{margin-bottom:0;}
+
+/* WORK GRID */
+#work{border-top:1px solid var(--border);}
+.work-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;}
+.work-card{position:relative;overflow:hidden;background:var(--card-bg,var(--sage-pale));border:1px solid var(--border);transition:border-color .25s,transform .25s;}
+.work-card:hover{border-color:var(--sage);transform:translateY(-2px);}
+.work-card:hover .work-card-overlay{opacity:1;}
+.work-card:hover .work-card-img{transform:scale(1.03);}
+.b-featured{grid-column:span 4;grid-row:span 2;min-height:460px;}
+.b-half{grid-column:span 2;min-height:230px;}
+.b-third{grid-column:span 2;min-height:210px;}
+.b-full{grid-column:span 6;min-height:190px;}
+.work-card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s cubic-bezier(.2,0,.2,1);opacity:.9;}
+.work-card-overlay{position:absolute;inset:0;background:rgba(143,166,135,0.82);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;z-index:2;}
+.wco-label{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);border:1px solid rgba(255,255,255,.6);padding:10px 22px;}
+.work-card-body{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(26,26,24,.7));z-index:3;}
+.work-card-num{font-family:var(--serif);font-size:11px;font-style:italic;color:rgba(255,255,255,.6);display:block;margin-bottom:2px;}
+.work-card-cat{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-light);display:block;margin-bottom:6px;}
+.work-card-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--white);line-height:1.2;}
+.b-full .work-card-title{font-size:22px;}
+.work-hint{text-align:center;margin-top:18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.work-hint span{color:var(--sage);}
+
+/* GALLERY */
+.gallery-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:#0a0a0a;flex-direction:column;display:none;}
+.gallery-overlay.open{display:flex;}
+.gallery-header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08);background:#111;flex-shrink:0;}
+.gallery-title{font-family:var(--serif);font-size:17px;font-weight:300;color:#f0f0f0;}
+.gallery-counter{font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.4);}
+.gallery-close{background:none;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;transition:all .2s;}
+.gallery-close:hover{border-color:var(--sage);color:var(--sage);}
+.gallery-stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;background:#0a0a0a;overflow:hidden;}
+/* IMAGE: full width, natural 2-page spread ratio */
+.gallery-img{width:100%;height:auto;display:block;object-fit:contain;}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:20px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:10;}
+.gallery-nav:hover{background:var(--sage);border-color:var(--sage);}
+.gallery-prev{left:6px;}
+.gallery-next{right:6px;}
+.gallery-footer{display:flex;justify-content:center;align-items:center;gap:5px;padding:10px;border-top:1px solid rgba(255,255,255,.06);background:#111;flex-shrink:0;flex-wrap:wrap;min-height:36px;max-height:40px;overflow:hidden;}
+.gallery-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .2s;flex-shrink:0;}
+.gallery-dot.active{background:var(--sage);width:16px;border-radius:2px;}
+
+/* ABOUT */
+#about{background:var(--sage-pale);border-top:1px solid var(--border);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.about-text-block h2{font-family:var(--serif);font-size:42px;font-weight:300;line-height:1.2;margin-bottom:32px;}
+.about-text-block h2 em{font-style:italic;color:var(--sage);}
+.about-text-block p{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:20px;}
+.about-details{padding-top:8px;}
+.about-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--border);font-size:13px;gap:16px;}
+.about-row:first-child{border-top:1px solid var(--border);}
+.about-row-label{color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase;flex-shrink:0;}
+.about-row-value{color:var(--black);font-family:var(--serif);font-size:15px;text-align:right;line-height:1.5;}
+.skills-block{margin-top:40px;}
+.skills-block h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:20px;}
+.skills-list{display:flex;flex-wrap:wrap;gap:8px;}
+.skill-pill{font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border:1px solid var(--sage-light);color:var(--black);background:var(--white);}
+
+/* EXPERIENCE */
+#experience{border-top:1px solid var(--border);}
+.exp-layout{display:grid;grid-template-columns:260px 1fr;gap:80px;}
+.exp-intro h2{font-family:var(--serif);font-size:36px;font-weight:300;line-height:1.25;margin-bottom:24px;}
+.exp-intro h2 em{font-style:italic;color:var(--sage);}
+.exp-intro p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:32px;}
+.exp-list{display:flex;flex-direction:column;}
+.exp-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--border);}
+.exp-item:first-child{border-top:1px solid var(--border);}
+.exp-period{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--muted);padding-top:2px;line-height:1.5;}
+.exp-role{font-size:13px;font-weight:500;color:var(--black);margin-bottom:2px;}
+.exp-company{font-size:12px;color:var(--sage);margin-bottom:5px;}
+.exp-detail{font-size:12px;color:var(--muted);line-height:1.6;}
+.exp-current{font-size:9px;letter-spacing:.15em;text-transform:uppercase;background:var(--sage);color:var(--white);padding:2px 7px;display:inline-block;margin-bottom:5px;}
+
+/* CONTACT */
+#contact{background:var(--black);border-top:1px solid #333;}
+#contact .section-label{color:var(--sage-light);}
+#contact .section-label::after{background:#333;}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
+.contact-heading{font-family:var(--serif);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.1;color:var(--white);letter-spacing:-.01em;margin-bottom:32px;}
+.contact-heading em{font-style:italic;color:var(--sage-light);}
+.contact-links{display:flex;flex-direction:column;}
+.contact-link{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #2a2a28;font-size:13px;color:#888;text-decoration:none;transition:color .2s;}
+.contact-link:first-child{border-top:1px solid #2a2a28;}
+.contact-link:hover{color:var(--sage-light);}
+.contact-link-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#555;}
+.contact-link:hover .contact-link-label{color:var(--sage);}
+.contact-link-arrow{color:#444;transition:transform .2s,color .2s;}
+.contact-link:hover .contact-link-arrow{transform:translateX(4px);color:var(--sage-light);}
+.contact-note{font-size:12px;color:#555;margin-top:48px;line-height:1.7;}
+footer{background:var(--black);border-top:1px solid #222;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:11px;color:#444;letter-spacing:.1em;}
+footer p span{color:var(--sage);}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s;}
+.fade-up.visible{opacity:1;transform:none;}
+.fade-up.d1{transition-delay:.1s;}.fade-up.d2{transition-delay:.2s;}.fade-up.d3{transition-delay:.3s;}
+@media(max-width:900px){
+  nav{padding:20px 24px;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{border-right:none;border-bottom:1px solid var(--border);padding:40px 24px;}
+  .hero-right{padding:40px 24px 60px;}
+  section{padding:72px 24px;}
+  .notice-banner{padding:28px 24px;}
+  .work-grid{grid-template-columns:1fr 1fr;}
+  .b-featured,.b-half,.b-third,.b-full{grid-column:span 2;min-height:220px;}
+  .about-grid,.exp-layout,.contact-layout{grid-template-columns:1fr;gap:40px;}
+  footer{padding:20px 24px;flex-direction:column;gap:8px;text-align:center;}
+}
+@media(max-width:600px){
+  .work-grid{grid-template-columns:1fr;}
+  .b-featured,.b-half,.b-third,.b-full{grid-column:span 1;min-height:180px;}
+  .exp-item{grid-template-columns:1fr;gap:6px;}
+}
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<nav id="navbar">
+  <a href="#" class="nav-logo">Raksina <span>K.</span></a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <span class="hero-year">2026</span>
+    <div>
+      <div class="hero-outline">RAKSINA</div>
+      <div class="hero-solid">RAKSINA</div>
+      <div class="hero-outline">RAKSINA</div>
+      <div class="hero-outline2">RAKSINA</div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-tag">Graphic Designer</div>
+    <h1 class="hero-name">Raksina<br><em>Klungarvuth</em></h1>
+    <p class="hero-desc">A multi-disciplinary graphic designer based in Bangkok, crafting visual stories across branding, digital design, UX/UI, and illustration. Currently at Emerge Clip Co., Ltd.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">View Work</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<div class="notice-banner fade-up">
+  <div class="notice-inner">
+    <div class="notice-label">A note from Raksina</div>
+    <div class="notice-title">I sincerely apologize for the inconvenience.</div>
+    <div class="notice-body">
+      <p>My current Japanese workplace has a policy that restricts employees from publicly sharing or publishing any work created for the company on an online portfolio, to protect proprietary content and client confidentiality. Therefore, artworks that are able to share on this portfolio under the name of Emerge Clip Co., Ltd will be only non-client works (original content).</p>
+      <p>However, it is possible to showcase some client projects during a private online interview.</p>
+      <p>In the meantime, please kindly review my artworks from the previous companies. I greatly appreciate your understanding.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-label fade-up">Selected Work</div>
+  <p class="section-intro fade-up d1">Seven disciplines, one designer. Click any category to browse the full artwork.</p>
+  <div class="work-grid fade-up d2">
+
+    <!-- 01 Graphic & Digital — REPLACE background-image with your cover photo -->
+    <div class="work-card b-featured" onclick="openGallery('graphic')" style="--card-bg:#eef2ec;">
+      <div class="work-card-img" style="background-image:url('images/cover-graphic.jpg');"></div>
+      <div class="work-card-overlay"><span class="wco-label">Browse 42 spreads →</span></div>
+      <div class="work-card-body">
+        <span class="work-card-num">01</span>
+        <span class="work-card-cat">Graphic & Digital</span>
+        <h3 class="work-card-title">Graphic & Digital Design</h3>
+      </div>
+    </div>
+
+    <!-- 02 Brand Book — REPLACE background-image with your cover photo -->
+    <div class="work-card b-half" onclick="openGallery('brand')" style="--card-bg:#e8edf5;">
+      <div class="work-card-img" style="background-image:url('images/cover-brand.jpg');"></div>
+      <div class="work-card-overlay"><span class="wco-label">Browse 20 spreads →</span></div>
+      <div class="work-card-body">
+        <span class="work-card-num">02</span>
+        <span class="work-card-cat">Brand Book</span>
+        <h3 class="work-card-title">Brand Book & Rebranding</h3>
+      </div>
+    </div>
+
+    <!-- 03 Storyboard — REPLACE background-image with your cover photo -->
+    <div class="work-card b-half" onclick="openGallery('storyboard')" style="--card-bg:#f0ece8;">
+      <div class="work-card-img" style="background-image:url('images/cover-storyboard.jpg');"></div>
+      <div class="work-card-overlay"><span class="wco-label">Browse 11 spreads →</span></div>
+      <div class="work-card-body">
+        <span class="work-card-num">03</span>
+        <span class="work-card-cat">Storyboard</span>
+        <h3 class="work-card-title">Storyboard</h3>
+      </div>
+    </div>
+
+    <!-- 04 UX/UI — REPLACE background-image with your cover photo -->
+    <div class="work-card b-third" onclick="openGallery('uxui')" style="--card-bg:#eae8f0;">
+      <div class="work-card-img" style="background-image:url('images/cover-uxui.jpg');"></div>
+      <div class="work-card-overlay"><span class="wco-label">Browse 11 spreads →</span></div>
+      <div class="work-card-body">
+        <span class="work-card-num">04</span>
+        <span class="work-card-cat">UX / UI</span>
+        <h3 class="work-card-title">UX/UI Design</h3>
+      </div>
+    </div>
+
+    <!-- 05 Illustration — REPLACE background-image with your cover photo -->
+    <div class="work-card b-third" onclick="openGallery('illustration')" style="--card-bg:#f0eae8;">
+      <div class="work-card-img" style="background-image:url('images/cover-illustration.jpg');"></div>
+      <div class="work-card-overlay"><span class="wco-label">Browse 5 spreads →</span></div>
+      <div class="work-card-body">
+        <span class="work-card-num">05</span>
+        <span class="work-card-cat">Illustration</span>
+        <h3 class="work-card-title">Illustration</h3>
+      </div>
+    </div>
+
+    <!-- 06 Event — REPLACE background-image with your cover photo -->
+    <div class="work-card b-third" onclick="openGallery('event')" style="--card-bg:#edf0e8;">
+      <div class="work-card-img" style="background-image:url('images/cover-event.jpg');"></div>
+      <div class="work-card-overlay"><span class="wco-label">Browse 4 spreads →</span></div>
+      <div class="work-card-body">
+        <span class="work-card-num">06</span>
+        <span class="work-card-cat">Event</span>
+        <h3 class="work-card-title">Event Design</h3>
+      </div>
+    </div>
+
+    <!-- 07 Photography — REPLACE background-image with your cover photo -->
+    <div class="work-card b-full" onclick="openGallery('photo')" style="--card-bg:#e8ecf0;">
+      <div class="work-card-img" style="background-image:url('images/cover-photo.jpg');"></div>
+      <div class="work-card-overlay"><span class="wco-label">Browse 7 spreads →</span></div>
+      <div class="work-card-body">
+        <span class="work-card-num">07</span>
+        <span class="work-card-cat">Photography</span>
+        <h3 class="work-card-title">Photography</h3>
+      </div>
+    </div>
+
+  </div>
+  <p class="work-hint fade-up d3">Click any category to <span>browse all spreads</span> · use ← → arrow keys to navigate</p>
+</section>
+
+<!-- GALLERY LIGHTBOX -->
+<div class="gallery-overlay" id="gallery">
+  <div class="gallery-header">
+    <div class="gallery-title" id="gallery-title"></div>
+    <div class="gallery-counter" id="gallery-counter"></div>
+    <button class="gallery-close" onclick="closeGallery()">✕ Close</button>
+  </div>
+  <div class="gallery-stage">
+    <button class="gallery-nav gallery-prev" onclick="galleryNav(-1)">&#8592;</button>
+    <img class="gallery-img" id="gallery-img" src="" alt=""/>
+    <button class="gallery-nav gallery-next" onclick="galleryNav(1)">&#8594;</button>
+  </div>
+  <div class="gallery-footer" id="gallery-dots"></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label fade-up">About</div>
+  <div class="about-grid">
+    <div class="about-text-block fade-up">
+      <h2>Design is my <em>ever-curious</em> seat.</h2>
+      <p>I am a Bangkok-based graphic designer with a background in Interior Design (Assumption University of Thailand) and advanced studies in Graphic Design at Otis College of Art and Design, USA. I thrive on discovering something new at every project.</p>
+      <p>My work spans graphic design, brand identity, UX/UI, storyboarding, illustration, and photography. I work fluidly across Thai, English, and Japanese — bridging cultures through visual communication.</p>
+      <div class="skills-block">
+        <h4>Tools & Skills</h4>
+        <div class="skills-list">
+          <span class="skill-pill">Illustrator</span>
+          <span class="skill-pill">Photoshop</span>
+          <span class="skill-pill">InDesign</span>
+          <span class="skill-pill">Lightroom</span>
+          <span class="skill-pill">Premiere Pro</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">Brand Identity</span>
+          <span class="skill-pill">UX / UI</span>
+          <span class="skill-pill">Illustration</span>
+          <span class="skill-pill">Photography</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-details fade-up d2">
+      <div class="about-row"><span class="about-row-label">Location</span><span class="about-row-value">Bangkok, Thailand</span></div>
+      <div class="about-row"><span class="about-row-label">Born</span><span class="about-row-value">July 13, 1994</span></div>
+      <div class="about-row"><span class="about-row-label">Degree</span><span class="about-row-value">Interior Design<br>Assumption University of Thailand</span></div>
+      <div class="about-row"><span class="about-row-label">Education</span><span class="about-row-value">Graphic Design (Extension Program)<br>Otis College of Art and Design, USA</span></div>
+      <div class="about-row"><span class="about-row-label">Languages</span><span class="about-row-value">Thai · English · Japanese</span></div>
+      <div class="about-row"><span class="about-row-label">English</span><span class="about-row-value">TOEIC 815</span></div>
+      <div class="about-row"><span class="about-row-label">Contact</span><span class="about-row-value">+66 698-293-198</span></div>
+      <div class="about-row"><span class="about-row-label">Status</span><span class="about-row-value" style="color:var(--sage);">Open to Opportunities</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label fade-up">Experience</div>
+  <div class="exp-layout">
+    <div class="exp-intro fade-up">
+      <h2>A decade of <em>visual craft.</em></h2>
+      <p>From internships to international companies — each role has sharpened my eye and broadened my craft across Thailand and the USA.</p>
+      <a href="mailto:raksina.k0713@gmail.com" class="btn-ghost" style="margin-top:16px;">Request Full CV</a>
+    </div>
+    <div class="exp-list fade-up d2">
+      <div class="exp-item"><div class="exp-period">2023 – Present</div><div><span class="exp-current">Current</span><div class="exp-role">Graphic Designer</div><div class="exp-company">Emerge Clip Co., Ltd. (Japanese Company)</div><div class="exp-detail">Working directly with the Japanese team without a translator, designing across digital and print media.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2022 – 2023</div><div><div class="exp-role">Graphic Designer</div><div class="exp-company">Lexicon Business Communications (British Company)</div><div class="exp-detail">Digital design and editorial layout for corporate communications and sustainability campaigns.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2021 – 2022</div><div><div class="exp-role">Graphic Designer / Video Editor</div><div class="exp-company">The Food School Bangkok (Dusit International)</div><div class="exp-detail">Visual identity and multimedia content for a progressive culinary learning community.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2021</div><div><div class="exp-role">Graphic Designer / Photographer</div><div class="exp-company">Kiddai Studio</div><div class="exp-detail">Graphic design and photography services for studio clients.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2019 – 2020</div><div><div class="exp-role">Graphic Designer</div><div class="exp-company">Cloud 9 Worldwide</div><div class="exp-detail">Brand and digital design for international lifestyle clients.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2018 – 2019</div><div><div class="exp-role">Graphic Design Freelancer</div><div class="exp-company">Bowls by 39 Degrees (Pioneer, USA)</div><div class="exp-detail">Freelance graphic design for a US-based food and lifestyle brand.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2018</div><div><div class="exp-role">Graphic Design Freelancer</div><div class="exp-company">I Luv Sushi (Lakewood, USA)</div><div class="exp-detail">Freelance graphic design for a Japanese restaurant in California.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2018</div><div><div class="exp-role">Artist Market Vendor</div><div class="exp-company">Otis College of Art and Design (USA)</div><div class="exp-detail">Participated as an artist vendor during studies at Otis College.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2015 – 2024</div><div><div class="exp-role">Graphic Design Freelancer</div><div class="exp-company">Kiddai Studio</div><div class="exp-detail">Long-running freelance practice spanning branding, product design, and print.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2016</div><div><div class="exp-role">Product Designer</div><div class="exp-company">Kiddai Studio</div><div class="exp-detail">Product design including visual and physical product development.</div></div></div>
+      <div class="exp-item"><div class="exp-period">2015</div><div><div class="exp-role">Interior Design Internship</div><div class="exp-company">Designlabo Co., Ltd.</div><div class="exp-detail">Interior design internship — the foundation of a lifelong passion for visual craft.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Say Hello</div>
+  <div class="contact-layout">
+    <div class="fade-up">
+      <h2 class="contact-heading">Let's create something <em>beautiful</em> together.</h2>
+      <p class="contact-note">Available for freelance projects, full-time roles, and creative collaborations.<br>Based in Bangkok — working with clients worldwide.</p>
+    </div>
+    <div class="contact-links fade-up d2">
+      <a href="mailto:raksina.k0713@gmail.com" class="contact-link"><div><div class="contact-link-label">Email</div><div>raksina.k0713@gmail.com</div></div><span class="contact-link-arrow">→</span></a>
+      <a href="tel:+66698293198" class="contact-link"><div><div class="contact-link-label">Phone</div><div>+66 698-293-198</div></div><span class="contact-link-arrow">→</span></a>
+      <a href="https://linkedin.com" target="_blank" class="contact-link"><div><div class="contact-link-label">LinkedIn</div><div>Raksina Klungarvuth</div></div><span class="contact-link-arrow">→</span></a>
+      <a href="https://behance.net" target="_blank" class="contact-link"><div><div class="contact-link-label">Behance</div><div>View Portfolio</div></div><span class="contact-link-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Raksina Klungarvuth</span> — All rights reserved</p>
+  <p>Designed with care · Bangkok, Thailand</p>
+</footer>
+
+<script>
+// ── GALLERY DATA ──
+// Each section has an array of image paths.
+// Add your image filenames here — put all images in an "images" folder.
+// Example: 'images/graphic-01.jpg', 'images/graphic-02.jpg', ...
+const GALLERY = {
+  graphic: [
+    'images/graphic-01.jpg','images/graphic-02.jpg','images/graphic-03.jpg',
+    'images/graphic-04.jpg','images/graphic-05.jpg','images/graphic-06.jpg',
+    'images/graphic-07.jpg','images/graphic-08.jpg','images/graphic-09.jpg',
+    'images/graphic-10.jpg','images/graphic-11.jpg','images/graphic-12.jpg',
+    'images/graphic-13.jpg','images/graphic-14.jpg','images/graphic-15.jpg',
+    'images/graphic-16.jpg','images/graphic-17.jpg','images/graphic-18.jpg',
+    'images/graphic-19.jpg','images/graphic-20.jpg','images/graphic-21.jpg',
+    'images/graphic-22.jpg','images/graphic-23.jpg','images/graphic-24.jpg',
+    'images/graphic-25.jpg','images/graphic-26.jpg','images/graphic-27.jpg',
+    'images/graphic-28.jpg','images/graphic-29.jpg','images/graphic-30.jpg',
+    'images/graphic-31.jpg','images/graphic-32.jpg','images/graphic-33.jpg',
+    'images/graphic-34.jpg','images/graphic-35.jpg','images/graphic-36.jpg',
+    'images/graphic-37.jpg','images/graphic-38.jpg','images/graphic-39.jpg',
+    'images/graphic-40.jpg','images/graphic-41.jpg','images/graphic-42.jpg'
+  ],
+  brand: [
+    'images/brand-01.jpg','images/brand-02.jpg','images/brand-03.jpg',
+    'images/brand-04.jpg','images/brand-05.jpg','images/brand-06.jpg',
+    'images/brand-07.jpg','images/brand-08.jpg','images/brand-09.jpg',
+    'images/brand-10.jpg','images/brand-11.jpg','images/brand-12.jpg',
+    'images/brand-13.jpg','images/brand-14.jpg','images/brand-15.jpg',
+    'images/brand-16.jpg','images/brand-17.jpg','images/brand-18.jpg',
+    'images/brand-19.jpg','images/brand-20.jpg'
+  ],
+  storyboard: [
+    'images/storyboard-01.jpg','images/storyboard-02.jpg','images/storyboard-03.jpg',
+    'images/storyboard-04.jpg','images/storyboard-05.jpg','images/storyboard-06.jpg',
+    'images/storyboard-07.jpg','images/storyboard-08.jpg','images/storyboard-09.jpg',
+    'images/storyboard-10.jpg','images/storyboard-11.jpg'
+  ],
+  uxui: [
+    'images/uxui-01.jpg','images/uxui-02.jpg','images/uxui-03.jpg',
+    'images/uxui-04.jpg','images/uxui-05.jpg','images/uxui-06.jpg',
+    'images/uxui-07.jpg','images/uxui-08.jpg','images/uxui-09.jpg',
+    'images/uxui-10.jpg','images/uxui-11.jpg'
+  ],
+  illustration: [
+    'images/illustration-01.jpg','images/illustration-02.jpg','images/illustration-03.jpg',
+    'images/illustration-04.jpg','images/illustration-05.jpg'
+  ],
+  event: [
+    'images/event-01.jpg','images/event-02.jpg',
+    'images/event-03.jpg','images/event-04.jpg'
+  ],
+  photo: [
+    'images/photo-01.jpg','images/photo-02.jpg','images/photo-03.jpg',
+    'images/photo-04.jpg','images/photo-05.jpg','images/photo-06.jpg',
+    'images/photo-07.jpg'
+  ]
+};
+
+const TITLES = {
+  graphic:'Graphic & Digital Design',
+  brand:'Brand Book & Rebranding',
+  storyboard:'Storyboard',
+  uxui:'UX/UI Design',
+  illustration:'Illustration',
+  event:'Event Design',
+  photo:'Photography'
+};
+
+let currentSec = null, currentIdx = 0;
+
+function openGallery(id) {
+  currentSec = id;
+  currentIdx = 0;
+  document.getElementById('gallery-title').textContent = TITLES[id];
+  document.getElementById('gallery').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderGallery();
+}
+function closeGallery() {
+  document.getElementById('gallery').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function renderGallery() {
+  const imgs = GALLERY[currentSec];
+  const img = document.getElementById('gallery-img');
+  img.style.opacity = '0';
+  img.src = imgs[currentIdx];
+  img.onload = function(){ this.style.opacity = '1'; };
+  document.getElementById('gallery-counter').textContent = (currentIdx + 1) + ' / ' + imgs.length;
+  const dots = document.getElementById('gallery-dots');
+  dots.innerHTML = '';
+  imgs.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'gallery-dot' + (i === currentIdx ? ' active' : '');
+    d.onclick = () => { currentIdx = i; renderGallery(); };
+    dots.appendChild(d);
+  });
+}
+function galleryNav(dir) {
+  const imgs = GALLERY[currentSec];
+  currentIdx = (currentIdx + dir + imgs.length) % imgs.length;
+  renderGallery();
+}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('gallery').classList.contains('open')) return;
+  if (e.key === 'ArrowRight') galleryNav(1);
+  if (e.key === 'ArrowLeft') galleryNav(-1);
+  if (e.key === 'Escape') closeGallery();
+});
+
+// Cursor
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a,button,.work-card').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+});
+window.addEventListener('scroll', () =>
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40)
+);
+const obs = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
