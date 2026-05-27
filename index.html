@@ -1,684 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Raksina Klungarvuth — Graphic Designer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
-<style>
-:root {
-  --white: #faf9f7;
-  --black: #1a1a18;
-  --sage: #8fa687;
-  --sage-light: #c8d4c4;
-  --sage-pale: #eef2ec;
-  --muted: #8a8a84;
-  --border: #e2deda;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Jost', sans-serif;
-}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+Raksina K.
+		WORK
+		ABOUT
+		EXPERIENCE
+		CONTACT
 
-html { scroll-behavior: smooth; }
+2026
+RAKSINA
+RAKSINA
+RAKSINA
+RAKSINA
+SCROLL GRAPHIC DESIGNER
+Raksina Klungarvuth
+A multi-disciplinary graphic designer based in Bangkok, crafting visual stories across branding, digital design, UX/UI, and illustration. Currently at Emerge Clip Co., Ltd.
+VIEW WORK
+GET IN TOUCH
+A NOTE FROM RAKSINA
+I sincerely apologize for the inconvenience.
+My current Japanese workplace has a policy that restricts employees from publicly sharing or publishing any work created for the company on an online portfolio, to protect proprietary content and client confidentiality. Therefore, artworks that are able to share on this portfolio under the name of Emerge Clip Co., Ltd will be only non-client works (original content).
+However, it is possible to showcase some client projects during a private online interview.
+In the meantime, please kindly review my artworks from the previous companies. I greatly appreciate your understanding.
+SELECTED WORK
+Seven disciplines, one designer. Click any category to explore the full collection.
 
-body {
-  background: var(--white);
-  color: var(--black);
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+VIEW 10 PROJECTS →
+01
+GRAPHIC & DIGITAL
+Graphic & Digital Design
 
-/* ── CURSOR ── */
-*, a, button { cursor: none; }
-#cursor {
-  position: fixed; width: 10px; height: 10px;
-  background: var(--sage); border-radius: 50%;
-  pointer-events: none; z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease, width 0.25s ease, height 0.25s ease, background 0.25s ease;
-  mix-blend-mode: multiply;
-}
-#cursor.big { width: 48px; height: 48px; background: var(--sage-light); }
+VIEW 4 PROJECTS →
+02
+BRAND BOOK
+Brand Book & Rebranding
 
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 24px 48px;
-  background: rgba(250,249,247,0.88);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s;
-}
-nav.scrolled { border-color: var(--border); }
-.nav-logo {
-  font-family: var(--serif); font-size: 17px; font-weight: 400;
-  letter-spacing: 0.02em; color: var(--black); text-decoration: none;
-}
-.nav-logo span { color: var(--sage); }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a {
-  font-family: var(--sans); font-size: 11px; font-weight: 400;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
-  text-decoration: none; transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--black); }
-.nav-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--sage); display: inline-block;
-  animation: breathe 3s ease-in-out infinite;
-}
-@keyframes breathe { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+VIEW 6 PROJECTS →
+03
+STORYBOARD
+Storyboard
 
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 90px;
-}
-.hero-left {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 60px 48px 72px;
-  border-right: 1px solid var(--border);
-  position: relative; overflow: hidden;
-}
-.hero-year {
-  font-family: var(--sans); font-size: 11px; font-weight: 400;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-  margin-bottom: auto; padding-top: 20px;
-}
-.hero-outline-text {
-  font-family: var(--serif);
-  font-size: clamp(56px, 8vw, 108px);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--border);
-  user-select: none;
-  margin-bottom: -8px;
-}
-.hero-solid-text {
-  font-family: var(--serif);
-  font-size: clamp(56px, 8vw, 108px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: var(--black);
-  margin-bottom: 4px;
-}
-.hero-outline-text2 {
-  font-family: var(--serif);
-  font-size: clamp(56px, 8vw, 108px);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--sage-light);
-  user-select: none;
-}
-.hero-right {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 60px 48px 72px;
-}
-.hero-tag {
-  font-size: 11px; font-weight: 400; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--sage);
-  margin-bottom: 32px; display: flex; align-items: center; gap: 10px;
-  margin-top: auto; padding-top: 20px;
-}
-.hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--sage); }
-.hero-name {
-  font-family: var(--serif); font-size: 38px; font-weight: 300;
-  line-height: 1.15; letter-spacing: 0.01em; margin-bottom: 24px;
-  color: var(--black);
-}
-.hero-name em { font-style: italic; color: var(--sage); }
-.hero-desc {
-  font-size: 14px; line-height: 1.8; color: var(--muted);
-  max-width: 340px; margin-bottom: 48px;
-}
-.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-.btn-primary {
-  font-family: var(--sans); font-size: 11px; font-weight: 400;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  padding: 14px 28px; background: var(--black); color: var(--white);
-  border: 1px solid var(--black); text-decoration: none;
-  transition: background 0.25s, color 0.25s;
-  display: inline-block;
-}
-.btn-primary:hover { background: var(--sage); border-color: var(--sage); }
-.btn-ghost {
-  font-family: var(--sans); font-size: 11px; font-weight: 400;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  padding: 14px 28px; background: transparent; color: var(--muted);
-  border: 1px solid var(--border); text-decoration: none;
-  transition: border-color 0.25s, color 0.25s; display: inline-block;
-}
-.btn-ghost:hover { border-color: var(--sage); color: var(--sage); }
-.hero-scroll {
-  position: absolute; bottom: 32px; left: 48px;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--muted); display: flex; align-items: center; gap: 10px;
-}
-.hero-scroll::after {
-  content: ''; width: 1px; height: 32px; background: var(--border);
-}
+VIEW 6 PROJECTS →
+04
+UX / UI
+UX/UI Design
 
-/* ── SECTION SHARED ── */
-section { padding: 120px 48px; }
-.section-label {
-  font-size: 10px; font-weight: 400; letter-spacing: 0.25em;
-  text-transform: uppercase; color: var(--sage);
-  margin-bottom: 64px; display: flex; align-items: center; gap: 14px;
-}
-.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+VIEW 1 SERIES →
+05
+ILLUSTRATION
+Illustration
 
-/* ── WORK ── */
-#work { border-top: 1px solid var(--border); }
-.work-featured {
-  display: grid; grid-template-columns: 1.2fr 0.8fr;
-  gap: 0; border: 1px solid var(--border); margin-bottom: 2px;
-  overflow: hidden;
-}
-.work-featured-img {
-  height: 480px; background: var(--sage-pale);
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  border-right: 1px solid var(--border);
-}
-.work-featured-img .img-placeholder {
-  width: 100%; height: 100%; object-fit: cover;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif); font-size: 72px; color: var(--sage-light);
-  font-style: italic;
-}
-.work-featured-img::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: var(--sage);
-  transform: translateX(-101%);
-  transition: transform 0.5s cubic-bezier(0.76,0,0.24,1);
-}
-.work-featured:hover .work-featured-img::after { transform: translateX(0); }
-.work-featured-info {
-  padding: 48px;
-  display: flex; flex-direction: column; justify-content: space-between;
-}
-.work-num {
-  font-family: var(--serif); font-size: 13px; color: var(--muted);
-  letter-spacing: 0.05em; margin-bottom: 16px;
-}
-.work-category {
-  font-size: 10px; font-weight: 400; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--sage); margin-bottom: 14px;
-}
-.work-title {
-  font-family: var(--serif); font-size: 32px; font-weight: 400;
-  line-height: 1.2; color: var(--black); margin-bottom: 16px;
-}
-.work-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
-.work-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
-.tool-tag {
-  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 5px 12px; border: 1px solid var(--border); color: var(--muted);
-}
-.work-arrow {
-  font-family: var(--serif); font-size: 13px; color: var(--muted);
-  display: flex; align-items: center; gap: 8px; transition: color 0.2s; width: fit-content;
-}
-.work-arrow:hover { color: var(--sage); }
-.work-arrow::after { content: '→'; }
+VIEW 1 PROJECT →
+06
+EVENT
+Event Design
 
-.work-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
-.work-card {
-  border: 1px solid var(--border); overflow: hidden;
-  position: relative; background: var(--white);
-  transition: border-color 0.25s;
-}
-.work-card:hover { border-color: var(--sage); }
-.work-card-img {
-  height: 220px; background: var(--sage-pale);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif); font-size: 42px; color: var(--sage-light);
-  font-style: italic; overflow: hidden; position: relative;
-}
-.work-card-img.c2 { background: #f0ece8; }
-.work-card-img.c3 { background: #eae8f0; }
-.work-card-body { padding: 24px; }
-.work-card-cat {
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--sage); margin-bottom: 8px;
-}
-.work-card-title {
-  font-family: var(--serif); font-size: 18px; font-weight: 400;
-  color: var(--black); margin-bottom: 8px;
-}
-.work-card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+VIEW 1 COLLECTION →
+07
+PHOTOGRAPHY
+Photography
+CLICK A CATEGORY TO BROWSE ALL PROJECTS IN THAT DISCIPLINE
+✕
 
-/* ── ABOUT ── */
-#about { background: var(--sage-pale); border-top: 1px solid var(--border); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.about-text-block h2 {
-  font-family: var(--serif); font-size: 42px; font-weight: 300;
-  line-height: 1.2; margin-bottom: 32px; color: var(--black);
-}
-.about-text-block h2 em { font-style: italic; color: var(--sage); }
-.about-text-block p { font-size: 14px; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
-.about-details { padding-top: 8px; }
-.about-info-row {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 14px 0; border-bottom: 1px solid var(--border);
-  font-size: 13px;
-}
-.about-info-row:first-child { border-top: 1px solid var(--border); }
-.about-info-label { color: var(--muted); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
-.about-info-value { color: var(--black); font-family: var(--serif); font-size: 15px; }
-.skills-block { margin-top: 40px; }
-.skills-block h4 {
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--sage); margin-bottom: 20px;
-}
-.skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-pill {
-  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 7px 16px; border: 1px solid var(--sage-light);
-  color: var(--black); background: var(--white);
-}
+GRAPHIC & DIGITAL
+Graphic & Digital Design
+Editorial layouts, digital brochures, infographics, and campaign materials for international clients.
+		PCS Sustaining Sea Life with the Seagrass Planting Project ArticleDigital Research on Harmful Practices AsiaLAAB InfographicBCCT & AmCham InvitationDIT InfographicThe Food School Bangkok — A Progressive Learning CommunityELMA AwardNEA × HuaweiKiddai Studio
+GET IN TOUCH FOR FULL PORTFOLIO → 
+✕
 
-/* ── EXPERIENCE ── */
-#experience { border-top: 1px solid var(--border); }
-.exp-layout { display: grid; grid-template-columns: 280px 1fr; gap: 80px; }
-.exp-intro h2 {
-  font-family: var(--serif); font-size: 36px; font-weight: 300;
-  line-height: 1.25; color: var(--black); margin-bottom: 24px;
-}
-.exp-intro h2 em { font-style: italic; color: var(--sage); }
-.exp-intro p { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
-.exp-list { display: flex; flex-direction: column; }
-.exp-item {
-  display: grid; grid-template-columns: 130px 1fr;
-  gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--border);
-  position: relative;
-}
-.exp-item:first-child { border-top: 1px solid var(--border); }
-.exp-period {
-  font-family: var(--serif); font-style: italic;
-  font-size: 13px; color: var(--muted); padding-top: 3px;
-}
-.exp-role { font-size: 14px; font-weight: 400; color: var(--black); margin-bottom: 3px; }
-.exp-company { font-size: 12px; color: var(--sage); letter-spacing: 0.05em; margin-bottom: 8px; }
-.exp-detail { font-size: 12px; color: var(--muted); line-height: 1.7; }
-.exp-current {
-  font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
-  background: var(--sage); color: var(--white);
-  padding: 3px 8px; display: inline-block; margin-bottom: 6px;
-}
+BRAND BOOK
+Brand Book & Rebranding
+Complete brand identity systems, logo design, guidelines, and visual language for diverse organisations.
+		My Cloud Fulfillment RebrandingGame Space RebrandingWellington College Bangkok RebrandingWreath Bike Brandbook
+GET IN TOUCH FOR FULL PORTFOLIO → 
+✕
 
-/* ── CONTACT ── */
-#contact { background: var(--black); border-top: 1px solid #333; }
-#contact .section-label { color: var(--sage-light); }
-#contact .section-label::after { background: #333; }
-.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
-.contact-heading {
-  font-family: var(--serif); font-size: clamp(42px, 6vw, 72px);
-  font-weight: 300; line-height: 1.1; color: var(--white);
-  letter-spacing: -0.01em; margin-bottom: 32px;
-}
-.contact-heading em { font-style: italic; color: var(--sage-light); }
-.contact-links { display: flex; flex-direction: column; gap: 0; justify-content: flex-end; }
-.contact-link {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 20px 0; border-bottom: 1px solid #2a2a28;
-  font-size: 13px; color: #888; text-decoration: none;
-  transition: color 0.2s;
-}
-.contact-link:first-child { border-top: 1px solid #2a2a28; }
-.contact-link:hover { color: var(--sage-light); }
-.contact-link-label {
-  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #555;
-}
-.contact-link:hover .contact-link-label { color: var(--sage); }
-.contact-link-arrow { color: #444; transition: transform 0.2s, color 0.2s; }
-.contact-link:hover .contact-link-arrow { transform: translateX(4px); color: var(--sage-light); }
-.contact-note {
-  font-size: 12px; color: #555; margin-top: 48px; line-height: 1.7;
-}
+STORYBOARD
+Storyboard
+Pre-production visual storytelling for video content, campaigns, and original motion projects.
+		Original Content 1 StoryboardOriginal Content 2 StoryboardOriginal Content 3 StoryboardLAAB StoryboardUNFPA StoryboardADPC Storyboard
+GET IN TOUCH FOR FULL PORTFOLIO → 
+✕
 
-/* ── FOOTER ── */
-footer {
-  background: var(--black); border-top: 1px solid #222;
-  padding: 24px 48px; display: flex;
-  justify-content: space-between; align-items: center;
-}
-footer p { font-size: 11px; color: #444; letter-spacing: 0.1em; }
-footer p span { color: var(--sage); }
+UX / UI
+UX/UI Design
+Website and app design grounded in user research — from wireframes to polished, production-ready interfaces.
+		VKJeans.comAyana MiyakeCloud 9 WorldwideRK Pancake Shop (1st version)RK Pancake Shop (2nd version)Kiddai Studio Application
+GET IN TOUCH FOR FULL PORTFOLIO → 
+✕
 
-/* ── ANIMATIONS ── */
-.fade-up {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-.fade-up.d1 { transition-delay: 0.1s; }
-.fade-up.d2 { transition-delay: 0.2s; }
-.fade-up.d3 { transition-delay: 0.3s; }
-.fade-up.d4 { transition-delay: 0.4s; }
+ILLUSTRATION
+Illustration
+Original character illustration series with a warm, distinctive style under the by_Teppoyuri name.
+		by_Teppoyuri Illustration Series
+GET IN TOUCH FOR FULL PORTFOLIO → 
+✕
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  nav { padding: 20px 24px; }
-  .nav-links { gap: 20px; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { border-right: none; border-bottom: 1px solid var(--border); padding: 40px 24px; }
-  .hero-right { padding: 40px 24px 60px; }
-  section { padding: 80px 24px; }
-  .work-featured { grid-template-columns: 1fr; }
-  .work-featured-img { height: 300px; border-right: none; border-bottom: 1px solid var(--border); }
-  .work-grid { grid-template-columns: 1fr 1fr; }
-  .about-grid, .exp-layout, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
-  footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
-}
-@media (max-width: 600px) {
-  .work-grid { grid-template-columns: 1fr; }
-  .hero-outline-text, .hero-solid-text, .hero-outline-text2 { font-size: 52px; }
-  .exp-item { grid-template-columns: 1fr; gap: 8px; }
-}
-</style>
-</head>
-<body>
+EVENT
+Event Design
+Event branding, on-site collateral, and print materials for large-scale VIP events.
+		Deestone × Panther VIP Event 2019
+GET IN TOUCH FOR FULL PORTFOLIO → 
+✕
 
-<div id="cursor"></div>
-
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">Raksina <span>K.</span></a>
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-dot" title="Available for work"></div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-left">
-    <span class="hero-year">2025</span>
-    <div>
-      <div class="hero-outline-text">RAKSINA</div>
-      <div class="hero-solid-text">RAKSINA</div>
-      <div class="hero-outline-text">RAKSINA</div>
-      <div class="hero-outline-text2">RAKSINA</div>
-    </div>
-    <div class="hero-scroll">Scroll</div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-tag">Graphic Designer</div>
-    <h1 class="hero-name">
-      Raksina<br><em>Klungarvuth</em>
-    </h1>
-    <p class="hero-desc">
-      A multi-disciplinary graphic designer based in Bangkok, crafting visual stories across branding, digital design, UX/UI, and illustration. Currently at Emerge Clip Co., Ltd.
-    </p>
-    <div class="hero-actions">
-      <a href="#work" class="btn-primary">View Work</a>
-      <a href="#contact" class="btn-ghost">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<!-- WORK -->
-<section id="work">
-  <div class="section-label fade-up">Selected Work</div>
-
-  <!-- Featured -->
-  <div class="work-featured fade-up d1">
-    <div class="work-featured-img">
-      <div class="img-placeholder">✦</div>
-    </div>
-    <div class="work-featured-info">
-      <div>
-        <div class="work-num">01 / Featured</div>
-        <div class="work-category">Brand Book & Rebranding</div>
-        <h3 class="work-title">My Cloud Fulfillment Rebranding</h3>
-        <p class="work-desc">Complete brand identity overhaul — logo system, color palette, typography, and brand guidelines for a modern logistics brand.</p>
-        <div class="work-tools">
-          <span class="tool-tag">Illustrator</span>
-          <span class="tool-tag">Photoshop</span>
-          <span class="tool-tag">InDesign</span>
-        </div>
-      </div>
-      <a class="work-arrow" href="#work">View Case Study &nbsp;</a>
-    </div>
-  </div>
-
-  <!-- Grid -->
-  <div class="work-grid" style="margin-top:2px;">
-    <div class="work-card fade-up d1">
-      <div class="work-card-img">✺</div>
-      <div class="work-card-body">
-        <div class="work-card-cat">Graphic & Digital</div>
-        <div class="work-card-title">PCS Seagrass Article</div>
-        <div class="work-card-desc">Sustainability digital brochure with marine-themed illustrations and playful color vectors.</div>
-      </div>
-    </div>
-    <div class="work-card fade-up d2">
-      <div class="work-card-img c2">◈</div>
-      <div class="work-card-body">
-        <div class="work-card-cat">UX / UI Design</div>
-        <div class="work-card-title">VKJeans.com</div>
-        <div class="work-card-desc">E-commerce website design with clean product-first layout and smooth checkout flow.</div>
-      </div>
-    </div>
-    <div class="work-card fade-up d3">
-      <div class="work-card-img c3">❋</div>
-      <div class="work-card-body">
-        <div class="work-card-cat">Illustration</div>
-        <div class="work-card-title">By_Teppoyuri Series</div>
-        <div class="work-card-desc">Original character illustration series — delicate line work with soft, expressive palettes.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label fade-up">About</div>
-  <div class="about-grid">
-    <div class="about-text-block fade-up">
-      <h2>Design is my <em>ever-curious</em> seat.</h2>
-      <p>I am a Bangkok-based graphic designer with a background in Interior Design (Assumption University) and advanced studies at Otis College of Art and Design, USA. I thrive on discovering something new at every project.</p>
-      <p>My work spans graphic design, brand identity, UX/UI, storyboarding, illustration, and photography. I work fluidly across Thai, English, and Japanese — bridging cultures through visual communication.</p>
-      <div class="skills-block">
-        <h4>Tools & Skills</h4>
-        <div class="skills-list">
-          <span class="skill-pill">Illustrator</span>
-          <span class="skill-pill">Photoshop</span>
-          <span class="skill-pill">InDesign</span>
-          <span class="skill-pill">Lightroom</span>
-          <span class="skill-pill">Premiere Pro</span>
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">Brand Identity</span>
-          <span class="skill-pill">UX / UI</span>
-          <span class="skill-pill">Illustration</span>
-          <span class="skill-pill">Photography</span>
-        </div>
-      </div>
-    </div>
-    <div class="about-details fade-up d2">
-      <div class="about-info-row">
-        <span class="about-info-label">Location</span>
-        <span class="about-info-value">Bangkok, Thailand</span>
-      </div>
-      <div class="about-info-row">
-        <span class="about-info-label">Born</span>
-        <span class="about-info-value">July 13, 1994</span>
-      </div>
-      <div class="about-info-row">
-        <span class="about-info-label">Education</span>
-        <span class="about-info-value">Otis College of Art, USA</span>
-      </div>
-      <div class="about-info-row">
-        <span class="about-info-label">Degree</span>
-        <span class="about-info-value">Interior Design, AU Thailand</span>
-      </div>
-      <div class="about-info-row">
-        <span class="about-info-label">Languages</span>
-        <span class="about-info-value">Thai · English · Japanese</span>
-      </div>
-      <div class="about-info-row">
-        <span class="about-info-label">English Level</span>
-        <span class="about-info-value">TOEIC 815</span>
-      </div>
-      <div class="about-info-row">
-        <span class="about-info-label">Status</span>
-        <span class="about-info-value" style="color:var(--sage);">Open to Opportunities</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label fade-up">Experience</div>
-  <div class="exp-layout">
-    <div class="exp-intro fade-up">
-      <h2>A decade of <em>visual craft.</em></h2>
-      <p>From internships to international companies — each role has sharpened my eye and broadened my craft.</p>
-      <a href="mailto:raksina.k0713@gmail.com" class="btn-ghost" style="margin-top:16px;">Request Full CV</a>
-    </div>
-    <div class="exp-list fade-up d2">
-      <div class="exp-item">
-        <div class="exp-period">2023 – Present</div>
-        <div>
-          <span class="exp-current">Current</span>
-          <div class="exp-role">Graphic Designer</div>
-          <div class="exp-company">Emerge Clip Co., Ltd. (Japanese Company)</div>
-          <div class="exp-detail">Working directly with the Japanese team — designing across digital and print media for a Japanese client base.</div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-period">2022 – 2023</div>
-        <div>
-          <div class="exp-role">Graphic Designer</div>
-          <div class="exp-company">Lexicon Business Communications (British Company)</div>
-          <div class="exp-detail">Digital design and editorial layout for corporate communications and sustainability campaigns.</div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-period">2021 – 2022</div>
-        <div>
-          <div class="exp-role">Graphic Designer / Video Editor</div>
-          <div class="exp-company">The Food School Bangkok (Dusit International)</div>
-          <div class="exp-detail">Visual identity and multimedia content for a progressive culinary learning community.</div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-period">2019 – 2020</div>
-        <div>
-          <div class="exp-role">Graphic Designer</div>
-          <div class="exp-company">Cloud 9 Worldwide</div>
-          <div class="exp-detail">Brand and digital design for international lifestyle clients.</div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-period">2015 – 2024</div>
-        <div>
-          <div class="exp-role">Graphic Design Freelancer</div>
-          <div class="exp-company">Kiddai Studio</div>
-          <div class="exp-detail">Long-running freelance practice spanning branding, product design, and print across diverse clients.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">Say Hello</div>
-  <div class="contact-layout">
-    <div class="fade-up">
-      <h2 class="contact-heading">Let's create something <em>beautiful</em> together.</h2>
-      <p class="contact-note">
-        Available for freelance projects, full-time roles, and creative collaborations.<br>
-        Based in Bangkok — working with clients worldwide.
-      </p>
-    </div>
-    <div class="contact-links fade-up d2">
-      <a href="mailto:raksina.k0713@gmail.com" class="contact-link">
-        <div>
-          <div class="contact-link-label">Email</div>
-          <div>raksina.k0713@gmail.com</div>
-        </div>
-        <span class="contact-link-arrow">→</span>
-      </a>
-      <a href="tel:+66698293198" class="contact-link">
-        <div>
-          <div class="contact-link-label">Phone</div>
-          <div>+66 698-293-198</div>
-        </div>
-        <span class="contact-link-arrow">→</span>
-      </a>
-      <a href="https://linkedin.com" target="_blank" class="contact-link">
-        <div>
-          <div class="contact-link-label">LinkedIn</div>
-          <div>Raksina Klungarvuth</div>
-        </div>
-        <span class="contact-link-arrow">→</span>
-      </a>
-      <a href="https://behance.net" target="_blank" class="contact-link">
-        <div>
-          <div class="contact-link-label">Behance</div>
-          <div>View Portfolio</div>
-        </div>
-        <span class="contact-link-arrow">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 <span>Raksina Klungarvuth</span> — All rights reserved</p>
-  <p>Designed with care · Bangkok, Thailand</p>
-</footer>
-
-<script>
-// Custom cursor
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
-document.querySelectorAll('a, button, .work-card, .work-featured').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('big'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
-});
-
-// Nav scroll
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// Intersection observer for fade-up
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+PHOTOGRAPHY
+Photography
+Travel, street, and editorial photography across Thailand, the USA, and beyond.
+		Personal Photography Collection
+GET IN TOUCH FOR FULL PORTFOLIO → 
+ABOUT
+Design is my ever-curious seat.
+I am a Bangkok-based graphic designer with a background in Interior Design (Assumption University of Thailand) and advanced studies in Graphic Design at Otis College of Art and Design, USA. I thrive on discovering something new at every project.
+My work spans graphic design, brand identity, UX/UI, storyboarding, illustration, and photography. I work fluidly across Thai, English, and Japanese — bridging cultures through visual communication.
+TOOLS & SKILLS
+ILLUSTRATOR
+PHOTOSHOP
+INDESIGN
+LIGHTROOM
+PREMIERE PRO
+FIGMA
+BRAND IDENTITY
+UX / UI
+ILLUSTRATION
+PHOTOGRAPHY
+LOCATION
+Bangkok, Thailand
+BORN
+July 13, 1994
+DEGREE
+Interior Design
+Assumption University of Thailand
+EDUCATION
+Graphic Design (Extension Program)
+Otis College of Art and Design, USA
+LANGUAGES
+Thai · English · Japanese
+ENGLISH
+TOEIC 815
+CONTACT
++66 698-293-198
+STATUS
+Open to Opportunities
+EXPERIENCE
+A decade of visual craft.
+From internships to international companies — each role has sharpened my eye and broadened my craft across Thailand and the USA.
+REQUEST FULL CV 
+2023 – Present
+CURRENT
+Graphic Designer
+Emerge Clip Co., Ltd. (Japanese Company)
+Working directly with the Japanese team without a translator, designing across digital and print media. Non-client original works are shared publicly; client works available upon private request.
+2022 – 2023
+Graphic Designer
+Lexicon Business Communications (British Company)
+Digital design and editorial layout for corporate communications and sustainability campaigns for international clients.
+2021 – 2022
+Graphic Designer / Video Editor
+The Food School Bangkok (Dusit International)
+Visual identity and multimedia content production for a progressive culinary learning community.
+2021
+Graphic Designer / Photographer
+Kiddai Studio
+Graphic design and photography services for studio clients.
+2019 – 2020
+Graphic Designer
+Cloud 9 Worldwide
+Brand and digital design for international lifestyle clients.
+2018 – 2019
+Graphic Design Freelancer
+Bowls by 39 Degrees (Pioneer, USA)
+Freelance graphic design for a US-based food and lifestyle brand.
+2018
+Graphic Design Freelancer
+I Luv Sushi (Lakewood, USA)
+Freelance graphic design for a Japanese restaurant in California, USA.
+2018
+Artist Market Vendor
+Otis College of Art and Design (USA)
+Participated as an artist vendor during studies at Otis College of Art and Design, USA.
+2015 – 2024
+Graphic Design Freelancer
+Kiddai Studio
+Long-running freelance practice spanning branding, product design, and print across diverse clients.
+2016
+Product Designer
+Kiddai Studio
+Product design work including visual and physical product development.
+2015
+Interior Design Internship
+Designlabo Co., Ltd.
+Interior design internship — the foundation that led to a lifelong passion for visual craft.
+SAY HELLO
+Let's create something beautiful together.
+Available for freelance projects, full-time roles, and creative collaborations. Based in Bangkok — working with clients worldwide.
+EMAIL
+raksina.k0713@gmail.com
+→
+PHONE
++66 698-293-198
+→
+LINKEDIN
+Raksina Klungarvuth
+→
+BEHANCE
+View Portfolio
+→
+© 2026 Raksina Klungarvuth — All rights reserved
+Designed with care · Bangkok, Thailand
